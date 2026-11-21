@@ -10,7 +10,7 @@ In SillyTavern: **Extensions** (cubes icon) → **Install extension** → paste:
 https://github.com/OrdeliaLys/SillyTimizer
 ```
 
-, then reload the page.
+Then reload the page.
 
 ## Options
 
