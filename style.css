@@ -24,9 +24,13 @@ body.opt-paused #chat .mes_text {
 
 /* frame-rate meter */
 #opt-meter {
+    /* Placed from the top: on some setups, offsets from the bottom of the
+       screen collapse to the top. */
     position: fixed;
     right: 6px;
-    bottom: calc(var(--bottomFormBlockSize, 50px) + 10px);
+    bottom: auto;
+    top: calc(100vh - var(--bottomFormBlockSize, 50px) - 40px);
+    top: calc(100dvh - var(--bottomFormBlockSize, 50px) - 40px);
     z-index: 3500;
     padding: 2px 7px;
     border-radius: 6px;

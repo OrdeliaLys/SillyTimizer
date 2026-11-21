@@ -3,7 +3,7 @@
 // you see as little as possible. Options that you would notice are off by
 // default.
 
-const VERSION = '1.0.0';
+const VERSION = '1.0.1';
 const MODULE = 'silly_optimizer';
 
 const DEFAULTS = {
