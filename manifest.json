@@ -1,0 +1,10 @@
+{
+    "display_name": "Silly Optimizer",
+    "loading_order": 5,
+    "js": "index.js",
+    "css": "style.css",
+    "author": "Ordelia",
+    "version": "1.0.0",
+    "homePage": "",
+    "auto_update": false
+}

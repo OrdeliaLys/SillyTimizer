@@ -1,0 +1,63 @@
+/* Silly Optimizer */
+
+/* Messages you've scrolled away from aren't drawn until they come back into
+   view. The newest messages always stay fully drawn. "auto" remembers each
+   message's real height once it has been seen, so scrolling stays steady. */
+body.opt-offscreen #chat > .mes:not(:nth-last-child(-n+8)) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 180px;
+}
+
+/* Screen effects hold still while you scroll (and, if chosen, while a reply
+   is being written), then carry on. */
+body.opt-paused #sfx-fx-root *,
+body.opt-paused #sfx-fx-root *::before,
+body.opt-paused #sfx-fx-root *::after,
+body.opt-paused #sfx-fx-under *,
+body.opt-paused #sfx-fx-under *::before,
+body.opt-paused #sfx-fx-under *::after,
+body.opt-paused #ssb-holder *,
+body.opt-paused #chat .mes,
+body.opt-paused #chat .mes_text {
+    animation-play-state: paused !important;
+}
+
+/* frame-rate meter */
+#opt-meter {
+    position: fixed;
+    right: 6px;
+    bottom: calc(var(--bottomFormBlockSize, 50px) + 10px);
+    z-index: 3500;
+    padding: 2px 7px;
+    border-radius: 6px;
+    font: 12px/1.4 monospace;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+}
+
+#opt-meter.opt-ok { color: #9be3b4; }
+#opt-meter.opt-meh { color: #f5d77a; }
+#opt-meter.opt-bad { color: #ff8a85; }
+
+#opt-settings .checkbox_label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+#opt-settings .opt-note {
+    display: block;
+    opacity: 0.65;
+    font-size: 0.85em;
+}
+
+.opt-report {
+    white-space: pre-wrap;
+    font-size: 0.8em;
+    padding: 6px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.35);
+    user-select: text;
+}
